@@ -1,0 +1,3 @@
+/* Reset mínimo — o restante do CSS está inline no componente */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
