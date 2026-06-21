@@ -6,10 +6,10 @@ import Link from "next/link";
 import { ChevronRight, Clock, ExternalLink, Instagram, Mail, MapPin, Minus, Plus } from "lucide-react";
 
 /* ─── CONTATOS ─────────────────────────────────────────────── */
-const WA_ANNE = `https://wa.me/5592982301415?text=${encodeURIComponent(
+const WA_ANNE = `https://wa.me/5592981716233?text=${encodeURIComponent(
   "Olá! Gostaria de agendar uma consulta com a Rodrigues e Castro Advocacia.",
 )}`;
-const WA_JULIANA = `https://wa.me/5592981716233?text=${encodeURIComponent(
+const WA_JULIANA = `https://wa.me/5592982301415?text=${encodeURIComponent(
   "Olá! Gostaria de agendar uma consulta com a Rodrigues e Castro Advocacia.",
 )}`;
 const WA_PRIMARY = WA_JULIANA;
@@ -1671,7 +1671,7 @@ export default function HomePage() {
                   <div>
                     <p className="contato-item-label">Anne Castro</p>
                     <p className="contato-item-value">
-                      <a href={WA_ANNE} target="_blank" rel="noreferrer">+55 92 98230-1415</a>
+                      <a href={WA_ANNE} target="_blank" rel="noreferrer">+55 92 98171-6233</a>
                     </p>
                   </div>
                 </div>
@@ -1682,7 +1682,7 @@ export default function HomePage() {
                   <div>
                     <p className="contato-item-label">Juliana Rodrigues</p>
                     <p className="contato-item-value">
-                      <a href={WA_JULIANA} target="_blank" rel="noreferrer">+55 92 98171-6233</a>
+                      <a href={WA_JULIANA} target="_blank" rel="noreferrer">+55 92 98230-1415</a>
                     </p>
                   </div>
                 </div>
@@ -1818,10 +1818,10 @@ export default function HomePage() {
               <div className="footer-col">
                 <h4>Contato</h4>
                 <a href={WA_ANNE} target="_blank" rel="noreferrer">
-                  <WaIcon size={12} /> +55 92 98230-1415
+                  <WaIcon size={12} /> +55 92 98171-6233
                 </a>
                 <a href={WA_JULIANA} target="_blank" rel="noreferrer">
-                  <WaIcon size={12} /> +55 92 98171-6233
+                  <WaIcon size={12} /> +55 92 98230-1415
                 </a>
                 <a href={`mailto:${EMAIL}`}>
                   <Mail size={12} /> {EMAIL}
