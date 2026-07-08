@@ -1297,9 +1297,23 @@ export default function HomePage() {
     return () => obs.disconnect();
   }, []);
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: css }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <a className="skip-link" href="#conteudo">
         Pular para o conteúdo
       </a>
@@ -1579,7 +1593,7 @@ export default function HomePage() {
                     <Image
                       className="membro-foto"
                       src={m.foto}
-                      alt={m.nome}
+                      alt={`Advogada ${m.nome} (${m.oab})`}
                       fill
                       sizes="(max-width: 900px) 100vw, 50vw"
                       quality={90}

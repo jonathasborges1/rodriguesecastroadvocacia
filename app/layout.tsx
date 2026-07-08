@@ -19,16 +19,24 @@ const geometriaFallback = Montserrat({
   display: "swap",
 });
 
+const SITE_URL = "https://rodriguesecastroadvocacia.com.br";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Rodrigues e Castro Advocacia | Direito Civil, Trabalhista e do Consumidor — AM",
   description:
     "Escritório de advocacia com atuação em Direito Civil, Trabalhista e do Consumidor. Anne Castro (OAB/AM-11421) e Juliana Rodrigues (OAB/AM-10547). Atendimento online e presencial em Manaus.",
   keywords:
     "advocacia Amazonas, advogado Manaus, direito civil AM, direito trabalhista AM, direito consumidor AM, Rodrigues e Castro Advocacia, OAB AM",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Rodrigues e Castro Advocacia | Direito Civil · Trabalhista · Consumidor",
     description:
       "Advocacia com atuação em Direito Civil, Trabalhista e do Consumidor. Atendimento online e presencial em Manaus.",
+    url: "/",
+    siteName: "Rodrigues e Castro Advocacia",
     locale: "pt_BR",
     type: "website",
     images: [
@@ -50,6 +58,40 @@ export const metadata: Metadata = {
   },
 };
 
+const legalServiceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  name: "Rodrigues e Castro Advocacia",
+  url: SITE_URL,
+  image: `${SITE_URL}/images/og-rodrigues-e-castro.png`,
+  logo: `${SITE_URL}/images/logo.png`,
+  email: "rodriguesecastroadvocacia@gmail.com",
+  telephone: "+55-92-98230-1415",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Rua Luis Lopes, 32 — Parque 10 de Novembro",
+    addressLocality: "Manaus",
+    addressRegion: "AM",
+    addressCountry: "BR",
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "08:00",
+    closes: "17:00",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Manaus",
+  },
+  sameAs: ["https://www.instagram.com/adv.rodriguesecastro"],
+  knowsAbout: [
+    "Direito Civil",
+    "Direito do Trabalho",
+    "Direito do Consumidor",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -60,7 +102,13 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${argueFallback.variable} ${geometriaFallback.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(legalServiceJsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
