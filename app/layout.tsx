@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
+import { EMAIL, INSTAGRAM, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 // Substitutos temporários até o recebimento dos arquivos licenciados
@@ -18,8 +19,6 @@ const geometriaFallback = Montserrat({
   variable: "--rc-body",
   display: "swap",
 });
-
-const SITE_URL = "https://rodriguesecastroadvocacia.com.br";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -65,7 +64,7 @@ const legalServiceJsonLd = {
   url: SITE_URL,
   image: `${SITE_URL}/images/og-rodrigues-e-castro.png`,
   logo: `${SITE_URL}/images/logo.png`,
-  email: "rodriguesecastroadvocacia@gmail.com",
+  email: EMAIL,
   telephone: "+55-92-98230-1415",
   address: {
     "@type": "PostalAddress",
@@ -84,7 +83,7 @@ const legalServiceJsonLd = {
     "@type": "City",
     name: "Manaus",
   },
-  sameAs: ["https://www.instagram.com/adv.rodriguesecastro"],
+  sameAs: [INSTAGRAM],
   knowsAbout: [
     "Direito Civil",
     "Direito do Trabalho",
