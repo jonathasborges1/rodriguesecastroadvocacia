@@ -1838,6 +1838,16 @@ export default function HomePage() {
             <hr className="footer-line" />
             <div className="footer-bottom">
               <span>© 2026 Rodrigues e Castro Advocacia · OAB/AM</span>
+              <span>
+                Site criado por{" "}
+                <a href="https://lumasites.com.br" target="_blank" rel="noopener">
+                  Luma Sites
+                </a>{" "}
+                e{" "}
+                <a href="https://github.com/jonathasborges1/" target="_blank" rel="noopener">
+                  Jonathas Borges
+                </a>
+              </span>
             </div>
           </div>
         </footer>
